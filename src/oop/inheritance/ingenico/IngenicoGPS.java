@@ -2,8 +2,9 @@ package oop.inheritance.ingenico;
 
 import oop.inheritance.data.Transaction;
 import oop.inheritance.data.TransactionResponse;
+import oop.inheritance.tpv.CommunicationDevice;
 
-public class IngenicoGPS {
+public class IngenicoGPS implements CommunicationDevice {
     /**
      * Opens a connection using the GPS device
      *
@@ -22,6 +23,11 @@ public class IngenicoGPS {
      */
     public boolean send(Transaction message) {
         return true;
+    }
+
+    @Override
+    public TransactionResponse recive() {
+        return null;
     }
 
     /**

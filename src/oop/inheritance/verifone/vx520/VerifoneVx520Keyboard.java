@@ -1,6 +1,8 @@
 package oop.inheritance.verifone.vx520;
 
-public class VerifoneVx520Keyboard {
+import oop.inheritance.tpv.Keyboard;
+
+public class VerifoneVx520Keyboard implements Keyboard {
 
     public String get(){
         return "Key pressed";

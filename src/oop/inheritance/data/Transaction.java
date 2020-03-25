@@ -7,6 +7,9 @@ public class Transaction {
     private Card card;
     private LocalDateTime localDateTime;
 
+    public static Object builder() {
+    }
+
     public int getAmountInCents() {
         return amountInCents;
     }

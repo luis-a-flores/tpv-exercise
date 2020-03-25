@@ -2,8 +2,9 @@ package oop.inheritance.ingenico;
 
 import oop.inheritance.data.Transaction;
 import oop.inheritance.data.TransactionResponse;
+import oop.inheritance.tpv.CommunicationDevice;
 
-public class IngenicoEthernet {
+public class IngenicoEthernet implements CommunicationDevice {
 
     /**
      * Opens a connection using the ethernet device
@@ -24,6 +25,12 @@ public class IngenicoEthernet {
     public boolean send(Transaction transaction) {
         return true;
     }
+
+    @Override
+    public TransactionResponse recive() {
+        return null;
+    }
+
 
     /**
      * Method blocks until host send a response or until a timeout is reached.

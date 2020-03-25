@@ -1,39 +1,41 @@
 package oop.inheritance.verifone.v240m;
 
-public class VerifoneV240mGPS {
-    /**
-     * Opens a connection using the GPS device
-     *
-     * @return true if the connection was successfully opened
-     */
+
+import oop.inheritance.data.Transaction;
+import oop.inheritance.data.TransactionResponse;
+import oop.inheritance.tpv.CommunicationDevice;
+
+public class VerifoneV240mGPS implements CommunicationDevice {
+    @Override
     public boolean open() {
-
-        return true;
+        return false;
     }
 
     /**
-     * Sends a message to the server
-     *
-     * @param message message to be sent to the server
-     * @return true if the message was sent successfully, false otherwise
-     */
-    public boolean send(byte[] message) {
-        return true;
+         * Opens a connection using the GPS device
+         * <p>
+         * /**
+         * Sends a message to the server
+         *
+         * @param transaction message to be sent to the server
+         * @return true if the message was sent successfully, false otherwise
+         */
+        public boolean send(Transaction transaction) {
+            return true;
+        }
+
+    @Override
+    public TransactionResponse recive() {
+        return null;
     }
 
-    /**
-     * Method blocks until host send a response or until a timeout is reached.
-     *
-     * @return Message received from the host. In case of timeout it returns null
-     */
-    public byte[] receive() {
-        return "response".getBytes();
-    }
-
-    /**
-     * Closes the channel releasing every used resources
-     */
+    @Override
     public void close() {
 
     }
+
+    public TransactionResponse receive() {
+            return new TransactionResponse(true, "12314");
+        }
 }
+
