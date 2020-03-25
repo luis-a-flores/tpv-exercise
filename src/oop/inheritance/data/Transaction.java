@@ -45,7 +45,7 @@ public class Transaction {
         return this;
     }
 
-    public Transaction buil()
+    public Transaction build()
     {
         return  new Transaction(amountInCents,card,localDateTime);
     }
