@@ -42,7 +42,7 @@ public class Application {
     }
 
     public String readKey() {
-        IngenicoKeyboard ingenicoKeyboard = new IngenicoKeyboard();
+        Keyboard ingenicoKeyboard = abstractTPVFactory.getKeyboard();
 
         return ingenicoKeyboard.get();
     }
@@ -67,7 +67,7 @@ public class Application {
         String amount = keyboard.get(); //Amount with decimal point as string
 
         Transaction transaction = Transaction.builder()
-                .LocalDateTime(LocalDateTime.now())
+                .LocalDateTime(localDateTime.now())
                 .Card(card)
                 .AmountInCents(Integer.parseInt(amount.replace(".", "")));
 

@@ -33,7 +33,7 @@ public class IngenicoTPVFactory extends AbstractTPVFactory {
 
     @Override
     public Keyboard getKeyboard() {
-        return new IngenicoKeyboard();
+        return IngenicoKeyboard.getInstance();
     }
 
 
@@ -41,9 +41,9 @@ public class IngenicoTPVFactory extends AbstractTPVFactory {
     public Map<CommunicationType, CommunicationDevice> getComunicationDeviceMap() {
         Map<CommunicationType, CommunicationDevice> communicationDeviceEnumMap = new HashMap<>();
 
-        communicationDeviceEnumMap.put(CommunicationType.ETHERNET, new IngenicoEthernet());
-        communicationDeviceEnumMap.put(CommunicationType.GPS, new IngenicoGPS());
-        communicationDeviceEnumMap.put(CommunicationType.MODEM, new IngenicoModem());
+        communicationDeviceEnumMap.put(CommunicationType.ETHERNET,IngenicoEthernet.getInstance());
+        communicationDeviceEnumMap.put(CommunicationType.GPS, IngenicoGPS.getInstance());
+        communicationDeviceEnumMap.put(CommunicationType.MODEM, IngenicoModem.getInstance());
 
         return communicationDeviceEnumMap;
     }

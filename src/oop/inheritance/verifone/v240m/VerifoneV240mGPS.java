@@ -3,9 +3,27 @@ package oop.inheritance.verifone.v240m;
 
 import oop.inheritance.data.Transaction;
 import oop.inheritance.data.TransactionResponse;
+import oop.inheritance.ingenico.IngenicoEthernet;
 import oop.inheritance.tpv.CommunicationDevice;
 
 public class VerifoneV240mGPS implements CommunicationDevice {
+    private static VerifoneV240mGPS verifoneV240mGPS;
+
+    VerifoneV240mGPS()
+    {
+
+    }
+
+    public static VerifoneV240mGPS getInstance()
+    {
+        if(verifoneV240mGPS == null)
+        {
+            verifoneV240mGPS=new VerifoneV240mGPS();
+        }
+        return  verifoneV240mGPS;
+    }
+
+
     @Override
     public boolean open() {
         return false;

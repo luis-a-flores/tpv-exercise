@@ -6,6 +6,22 @@ import oop.inheritance.tpv.CommunicationDevice;
 
 public class VerifoneVx520Ethernet implements CommunicationDevice{
 
+    private static VerifoneVx520Ethernet  verifoneVx520Ethernet;
+
+    VerifoneVx520Ethernet()
+    {
+
+    }
+
+    public static VerifoneVx520Ethernet getInstance()
+    {
+        if(verifoneVx520Ethernet == null)
+        {
+            verifoneVx520Ethernet=new VerifoneVx520Ethernet();
+        }
+        return  verifoneVx520Ethernet;
+    }
+
     /**
      * Opens a connection using the ethernet device
      *

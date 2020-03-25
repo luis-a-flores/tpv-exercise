@@ -26,12 +26,12 @@ public class VerifoneV240Factory extends AbstractTPVFactory {
 
     @Override
     public Display getDisplay() {
-        return new VerifoneV240mDisplay();
+        return VerifoneV240mDisplay.getInstance();
     }
 
     @Override
     public Keyboard getKeyboard() {
-        return new VerifoneV240mKeyboard();
+        return VerifoneV240mKeyboard.getInstance();
     }
 
 
@@ -40,9 +40,9 @@ public class VerifoneV240Factory extends AbstractTPVFactory {
     public Map<CommunicationType, CommunicationDevice> getComunicationDeviceMap() {
         Map<CommunicationType, CommunicationDevice> communicationDeviceEnumMap = new HashMap<>();
 
-        communicationDeviceEnumMap.put(CommunicationType.ETHERNET, new VerifoneV240mEthernet());
-        communicationDeviceEnumMap.put(CommunicationType.GPS, new VerifoneV240mGPS());
-        communicationDeviceEnumMap.put(CommunicationType.MODEM, new VerifoneV240mModem());
+        communicationDeviceEnumMap.put(CommunicationType.ETHERNET, VerifoneV240mEthernet.getInstance());
+        communicationDeviceEnumMap.put(CommunicationType.GPS, VerifoneV240mGPS.getInstance());
+        communicationDeviceEnumMap.put(CommunicationType.MODEM, VerifoneV240mModem.getInstance());
 
         return communicationDeviceEnumMap;
     }

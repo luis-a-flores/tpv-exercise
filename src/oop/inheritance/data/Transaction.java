@@ -7,30 +7,46 @@ public class Transaction {
     private Card card;
     private LocalDateTime localDateTime;
 
-    public static Object builder() {
+    public static Object builder()
+    {
     }
 
-    public int getAmountInCents() {
-        return amountInCents;
+    public Transaction getAmountInCents()
+    {
+        this.amountInCents=amountInCents;
+        return this;
     }
 
-    public void setAmountInCents(int amountInCents) {
+    public Transaction setAmountInCents(int amountInCents)
+    {
         this.amountInCents = amountInCents;
+        return this;
     }
 
-    public Card getCard() {
-        return card;
+    public Transaction getCard(Card card) {
+        this.card=card;
+        return this;
     }
 
-    public void setCard(Card card) {
+    public Transaction setCard(Card card) {
         this.card = card;
+        return this;
     }
 
-    public LocalDateTime getLocalDateTime() {
+    public Transaction getLocalDateTime(LocalDateTime localDateTime)
+    {
+        this.localDateTime=localDateTime;
         return localDateTime;
     }
 
-    public void setLocalDateTime(LocalDateTime localDateTime) {
+    public Transaction setLocalDateTime(LocalDateTime localDateTime) {
+
         this.localDateTime = localDateTime;
+        return this;
+    }
+
+    public Transaction buil()
+    {
+        return  new Transaction(amountInCents,card,localDateTime);
     }
 }

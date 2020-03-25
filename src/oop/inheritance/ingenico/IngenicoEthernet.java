@@ -6,6 +6,22 @@ import oop.inheritance.tpv.CommunicationDevice;
 
 public class IngenicoEthernet implements CommunicationDevice {
 
+    private static IngenicoEthernet ingenicoEthernet;
+
+    IngenicoEthernet()
+    {
+
+    }
+
+    public static IngenicoEthernet getInstance()
+    {
+        if(ingenicoEthernet == null)
+        {
+            ingenicoEthernet=new IngenicoEthernet();
+        }
+        return  ingenicoEthernet;
+    }
+
     /**
      * Opens a connection using the ethernet device
      *

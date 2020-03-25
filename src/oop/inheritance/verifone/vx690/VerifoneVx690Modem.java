@@ -6,6 +6,21 @@ import oop.inheritance.tpv.CommunicationDevice;
 
 public class VerifoneVx690Modem implements CommunicationDevice {
 
+    private static VerifoneVx690Modem verifoneVx690Modem;
+
+    VerifoneVx690Modem()
+    {
+    }
+
+    public static VerifoneVx690Modem getInstance()
+    {
+        if(verifoneVx690Modem == null)
+        {
+            verifoneVx690Modem=new VerifoneVx690Modem();
+        }
+        return  verifoneVx690Modem;
+    }
+
     /**
      * Opens a connection using the modem device
      *

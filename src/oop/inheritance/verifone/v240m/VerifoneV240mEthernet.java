@@ -3,9 +3,25 @@ package oop.inheritance.verifone.v240m;
 
 import oop.inheritance.data.Transaction;
 import oop.inheritance.data.TransactionResponse;
+import oop.inheritance.ingenico.IngenicoEthernet;
 import oop.inheritance.tpv.CommunicationDevice;
 
 public class VerifoneV240mEthernet implements CommunicationDevice {
+    private static VerifoneV240mEthernet verifoneV240mEthernet;
+
+    VerifoneV240mEthernet()
+    {
+
+    }
+
+    public static VerifoneV240mEthernet getInstance()
+    {
+        if(verifoneV240mEthernet == null)
+        {
+            verifoneV240mEthernet=new VerifoneV240mEthernet();
+        }
+        return  verifoneV240mEthernet;
+    }
 
 
         /**
