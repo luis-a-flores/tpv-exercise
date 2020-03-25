@@ -83,7 +83,7 @@ public class Application {
 
     private void printReceipt(Transaction transaction, String hostReference) {
         IngenicoPrinter ingenicoPrinter = new IngenicoPrinter();
-        Card card = transaction.getCard();
+        Card card = transaction.getCard( );
 
         ingenicoPrinter.print(5, "APROBADA");
         ingenicoPrinter.lineFeed();
